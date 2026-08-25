@@ -1,0 +1,109 @@
+{
+  "id": "com.putyy.res-downloader.douyin",
+  "name": "Douyin",
+  "author": {
+    "name": "putyy",
+    "url": "https://github.com/putyy/res-downloader-plugin-douyin"
+  },
+  "locales": {
+    "zh-CN": {
+      "name": "抖音",
+      "description": "从抖音网页接口识别视频和图文作品；图文作品按可展开合集保存。"
+    },
+    "zh": {
+      "name": "抖音",
+      "description": "从抖音网页接口识别视频和图文作品；图文作品按可展开合集保存。"
+    },
+    "en": {
+      "name": "Douyin",
+      "description": "Captures Douyin videos and image posts. Image posts are stored as expandable collections."
+    }
+  },
+  "version": "1.0.0",
+  "apiVersion": 1,
+  "runtime": "javascript",
+  "entry": "main.js",
+  "priority": 1800,
+  "requires": {"ffmpeg": ">=6.0"},
+  "permissions": {
+    "domains": ["*.douyin.com", "*.iesdouyin.com"],
+    "capabilities": [
+      "observe-response",
+      "read-response-body",
+      "emit-resource",
+      "media.basic"
+    ],
+    "bodyLimit": 16777216
+  },
+  "match": [
+    {
+      "stage": "response",
+      "host": "*.douyin.com",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    },
+    {
+      "stage": "response",
+      "host": "*.iesdouyin.com",
+      "readBody": true,
+      "contentTypes": ["application/json", "application/json;*"]
+    }
+  ],
+  "resourceKinds": [
+    {
+      "id": "media.collection",
+      "icon": "albums",
+      "color": "#8b5cf6",
+      "locales": {
+        "zh": {"name": "合集"},
+        "en": {"name": "Collection"}
+      }
+    },
+    {
+      "id": "media.video",
+      "icon": "video",
+      "color": "#2080f0",
+      "locales": {
+        "zh": {"name": "视频"},
+        "en": {"name": "Video"}
+      }
+    },
+    {
+      "id": "media.image",
+      "icon": "image",
+      "color": "#18a058",
+      "locales": {
+        "zh": {"name": "图片"},
+        "en": {"name": "Image"}
+      }
+    },
+    {
+      "id": "media.audio",
+      "icon": "musical-notes",
+      "color": "#f0a020",
+      "locales": {
+        "zh": {"name": "音频"},
+        "en": {"name": "Audio"}
+      }
+    }
+  ],
+  "settingsSchema": {
+    "type": "object",
+    "properties": {
+      "includeImagePostAudio": {
+        "type": "boolean",
+        "default": true,
+        "x-locales": {
+          "zh": {
+            "name": "包含图文背景音乐",
+            "description": "将图文作品的背景音乐作为合集中的独立子资源。"
+          },
+          "en": {
+            "name": "Include image-post audio",
+            "description": "Add an image post's soundtrack as a separate collection child."
+          }
+        }
+      }
+    }
+  }
+}

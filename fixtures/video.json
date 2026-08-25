@@ -1,0 +1,23 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://www.douyin.com/aweme/v1/web/aweme/post/",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/post/",
+      "headers": {}
+    },
+    "response": {
+      "statusCode": 200,
+      "headers": {"Content-Type": ["application/json"]},
+      "contentType": "application/json",
+      "body": "{\"aweme_list\":[{\"aweme_id\":\"7390002\",\"desc\":\"示例视频\",\"author\":{\"nickname\":\"示例作者\"},\"video\":{\"width\":1920,\"height\":1080,\"play_addr\":{\"url_list\":[\"https://v.douyinvod.com/example-video.mp4\"],\"data_size\":42}}}]}"
+    }
+  },
+  "expected": {
+    "resourceCount": 1,
+    "resourceUrls": ["https://v.douyinvod.com/example-video.mp4"],
+    "decision": "continue"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://www.douyin.com/aweme/v1/web/aweme/detail/",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/detail/",
+      "headers": {}
+    },
+    "response": {
+      "statusCode": 200,
+      "headers": {"Content-Type": ["application/json"]},
+      "contentType": "application/json",
+      "body": "{\"aweme_detail\":{\"aweme_id\":\"7390001\",\"desc\":\"示例图文\",\"author\":{\"nickname\":\"示例作者\"},\"images\":[{\"url_list\":[\"https://p3.douyinpic.com/example-a.jpeg\"],\"width\":1080,\"height\":1440},{\"url_list\":[\"https://p3.douyinpic.com/example-b.webp\"],\"width\":1080,\"height\":1440}],\"music\":{\"play_url\":{\"url_list\":[\"https://sf5.douyinstatic.com/example-song.mp3\"]}}}}"
+    },
+    "settings": {"includeImagePostAudio": true}
+  },
+  "expected": {
+    "resourceCount": 4,
+    "resourceUrls": [
+      "https://p3.douyinpic.com/example-a.jpeg",
+      "https://p3.douyinpic.com/example-b.webp",
+      "https://sf5.douyinstatic.com/example-song.mp3"
+    ],
+    "decision": "continue"
+  }
+}
