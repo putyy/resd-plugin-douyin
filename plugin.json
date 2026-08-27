@@ -19,7 +19,7 @@
       "description": "Captures Douyin videos and image posts. Image posts are stored as expandable collections."
     }
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiVersion": 1,
   "runtime": "javascript",
   "entry": "main.js",
