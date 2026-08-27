@@ -25,11 +25,11 @@
 在仓库根目录执行：
 
 ```bash
-res-downloader plugin lint .
-res-downloader plugin replay . fixtures/image-post.json
-res-downloader plugin replay . fixtures/video.json
-res-downloader plugin replay . fixtures/suffixless-audio.json
-res-downloader plugin replay . fixtures/mp4-audio.json
+go run main.go plugin lint ./plugins/resd-plugin-douyin
+go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/image-post.json
+go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/video.json
+go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/suffixless-audio.json
+go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/mp4-audio.json
 ```
 
 Fixture 只包含脱敏后的虚构数据和示例地址。
