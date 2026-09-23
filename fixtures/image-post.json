@@ -10,11 +10,18 @@
     },
     "response": {
       "statusCode": 200,
-      "headers": {"Content-Type": ["application/json"]},
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
       "contentType": "application/json",
       "body": "{\"aweme_detail\":{\"aweme_id\":\"7390001\",\"desc\":\"示例图文\",\"author\":{\"nickname\":\"示例作者\"},\"images\":[{\"url_list\":[\"https://p3.douyinpic.com/example-a.jpeg\"],\"width\":1080,\"height\":1440},{\"url_list\":[\"https://p3.douyinpic.com/example-b.webp\"],\"width\":1080,\"height\":1440}],\"music\":{\"play_url\":{\"url_list\":[\"https://sf5.douyinstatic.com/example-song.mp3\"]}}}}"
     },
-    "settings": {"includeImagePostAudio": true}
+    "settings": {
+      "includeImagePostAudio": true,
+      "captureScope": "all"
+    }
   },
   "expected": {
     "resourceCount": 4,

@@ -1,0 +1,69 @@
+{
+  "observations": [
+    {
+      "stage": "response",
+      "request": {
+        "method": "POST",
+        "url": "https://www-hj.douyin.com:443/aweme/v1/web/history/write/",
+        "host": "www-hj.douyin.com:443",
+        "path": "/aweme/v1/web/history/write/",
+        "headers": {}
+      },
+      "response": {
+        "statusCode": 200,
+        "contentType": "application/octet-stream",
+        "headers": {
+          "Content-Type": [
+            "application/octet-stream"
+          ]
+        }
+      },
+      "settings": {}
+    },
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www-hj.douyin.com:443/aweme/v1/web/comment/list/",
+        "host": "www-hj.douyin.com:443",
+        "path": "/aweme/v1/web/comment/list/",
+        "headers": {}
+      },
+      "response": {
+        "statusCode": 200,
+        "contentType": "application/octet-stream",
+        "headers": {
+          "Content-Type": [
+            "application/octet-stream"
+          ]
+        }
+      },
+      "settings": {}
+    },
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www-hj.douyin.com:443/aweme/v2/web/notice/count/",
+        "host": "www-hj.douyin.com:443",
+        "path": "/aweme/v2/web/notice/count/",
+        "headers": {}
+      },
+      "response": {
+        "statusCode": 200,
+        "contentType": "application/octet-stream",
+        "headers": {
+          "Content-Type": [
+            "application/octet-stream"
+          ]
+        }
+      },
+      "settings": {}
+    }
+  ],
+  "expected": {
+    "resourceCount": 0,
+    "resourceUrls": [],
+    "decision": "continue"
+  }
+}

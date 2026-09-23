@@ -1,0 +1,32 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://www-hj.douyin.com:443/aweme/v1/web/aweme/detail/?aweme_id=7390041",
+      "host": "www-hj.douyin.com:443",
+      "path": "/aweme/v1/web/aweme/detail/",
+      "headers": {
+        "Referer": [
+          "https://www.douyin.com/"
+        ]
+      }
+    },
+    "response": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "application/octet-stream"
+        ]
+      },
+      "contentType": "application/octet-stream",
+      "body": "opaque-fixture-not-json"
+    },
+    "settings": {}
+  },
+  "expected": {
+    "resourceCount": 0,
+    "resourceUrls": [],
+    "decision": "continue"
+  }
+}

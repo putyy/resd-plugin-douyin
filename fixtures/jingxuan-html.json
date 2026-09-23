@@ -1,0 +1,30 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://www.douyin.com:443/jingxuan?modal_id=7390041",
+      "host": "www.douyin.com:443",
+      "path": "/jingxuan",
+      "headers": {}
+    },
+    "response": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "text/html"
+        ]
+      },
+      "contentType": "text/html",
+      "body": "<html><head><script id=\"RENDER_DATA\" type=\"application/json\">%7B%22app%22%3A%20%7B%22videoDetail%22%3A%20%7B%22aweme_id%22%3A%20%227390041%22%2C%20%22desc%22%3A%20%22%E7%A4%BA%E4%BE%8B%E7%B2%BE%E9%80%89%E6%8F%8F%E8%BF%B0%22%2C%20%22author%22%3A%20%7B%22nickname%22%3A%20%22%E7%A4%BA%E4%BE%8B%E4%BD%9C%E8%80%85%22%7D%2C%20%22video%22%3A%20%7B%22width%22%3A%201280%2C%20%22height%22%3A%20720%2C%20%22play_addr%22%3A%20%7B%22url_list%22%3A%20%5B%22https%3A//v11-weba.douyinvod.com/example-detail.mp4%22%5D%7D%7D%7D%2C%20%22data%22%3A%20%7B%22aweme_list%22%3A%20%5B%7B%22aweme_id%22%3A%20%227390099%22%2C%20%22desc%22%3A%20%22%E7%A4%BA%E4%BE%8B%E7%B2%BE%E9%80%89%E6%8F%8F%E8%BF%B0%22%2C%20%22author%22%3A%20%7B%22nickname%22%3A%20%22%E7%A4%BA%E4%BE%8B%E4%BD%9C%E8%80%85%22%7D%2C%20%22video%22%3A%20%7B%22width%22%3A%201280%2C%20%22height%22%3A%20720%2C%20%22play_addr%22%3A%20%7B%22url_list%22%3A%20%5B%22https%3A//v11-weba.douyinvod.com/example-detail.mp4%22%5D%7D%7D%7D%5D%7D%7D%7D</script></head></html>"
+    },
+    "settings": {}
+  },
+  "expected": {
+    "resourceCount": 1,
+    "resourceUrls": [
+      "https://v11-weba.douyinvod.com/example-detail.mp4"
+    ],
+    "decision": "continue"
+  }
+}

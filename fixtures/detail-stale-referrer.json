@@ -1,0 +1,88 @@
+{
+  "observations": [
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www-hj.douyin.com:443/aweme/v1/web/aweme/detail/?aweme_id=7390060",
+        "host": "www-hj.douyin.com:443",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "headers": {
+          "Referer": [
+            "https://www.douyin.com/jingxuan?modal_id=7390059"
+          ]
+        }
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": {
+          "Content-Type": [
+            "application/octet-stream"
+          ]
+        },
+        "contentType": "application/octet-stream",
+        "body": "{\"aweme_detail\": {\"aweme_id\": \"7390060\", \"desc\": \"示例连续作品 1\", \"author\": {\"nickname\": \"示例作者\"}, \"video\": {\"width\": 1280, \"height\": 720, \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-7390060.mp4\"]}}}}"
+      },
+      "settings": {}
+    },
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www-hj.douyin.com:443/aweme/v1/web/aweme/detail/?aweme_id=7390061",
+        "host": "www-hj.douyin.com:443",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "headers": {
+          "Referer": [
+            "https://www.douyin.com/jingxuan?modal_id=7390060"
+          ]
+        }
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": {
+          "Content-Type": [
+            "application/octet-stream"
+          ]
+        },
+        "contentType": "application/octet-stream",
+        "body": "{\"aweme_detail\": {\"aweme_id\": \"7390061\", \"desc\": \"示例连续作品 2\", \"author\": {\"nickname\": \"示例作者\"}, \"video\": {\"width\": 1280, \"height\": 720, \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-7390061.mp4\"]}}}}"
+      },
+      "settings": {}
+    },
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www-hj.douyin.com:443/aweme/v1/web/aweme/detail/?aweme_id=7390062",
+        "host": "www-hj.douyin.com:443",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "headers": {
+          "Referer": [
+            "https://www.douyin.com/jingxuan?modal_id=7390061"
+          ]
+        }
+      },
+      "response": {
+        "statusCode": 200,
+        "headers": {
+          "Content-Type": [
+            "application/octet-stream"
+          ]
+        },
+        "contentType": "application/octet-stream",
+        "body": "{\"aweme_detail\": {\"aweme_id\": \"7390062\", \"desc\": \"示例连续作品 3\", \"author\": {\"nickname\": \"示例作者\"}, \"video\": {\"width\": 1280, \"height\": 720, \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-7390062.mp4\"]}}}}"
+      },
+      "settings": {}
+    }
+  ],
+  "expected": {
+    "resourceCount": 3,
+    "resourceUrls": [
+      "https://v11-weba.douyinvod.com/example-7390060.mp4",
+      "https://v11-weba.douyinvod.com/example-7390061.mp4",
+      "https://v11-weba.douyinvod.com/example-7390062.mp4"
+    ],
+    "decision": "continue"
+  }
+}

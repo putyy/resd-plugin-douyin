@@ -19,34 +19,247 @@
       "description": "Captures Douyin videos and image posts. Image posts are stored as expandable collections."
     }
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "apiVersion": 1,
   "runtime": "javascript",
   "entry": "main.js",
   "priority": 1800,
-  "requires": {"ffmpeg": ">=6.0"},
+  "requires": {
+    "ffmpeg": ">=6.0"
+  },
   "permissions": {
-    "domains": ["*.douyin.com", "*.iesdouyin.com"],
+    "domains": [
+      "www.douyin.com",
+      "www-hj.douyin.com",
+      "*.douyinvod.com",
+      "*.douyinpic.com",
+      "*.douyinstatic.com"
+    ],
     "capabilities": [
       "observe-response",
       "read-response-body",
       "emit-resource",
-      "media.basic"
+      "media.basic",
+      "inject-page-script",
+      "page-bridge"
     ],
     "bodyLimit": 16777216
   },
   "match": [
     {
       "stage": "response",
-      "host": "*.douyin.com",
-      "readBody": true,
-      "contentTypes": ["application/json", "application/json;*"]
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/detail/",
+      "readBody": true
     },
     {
       "stage": "response",
-      "host": "*.iesdouyin.com",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/related/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/post/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/favorite/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/tab/feed/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v2/web/module/feed/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/mix/aweme/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/",
       "readBody": true,
-      "contentTypes": ["application/json", "application/json;*"]
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/jingxuan*",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/video/*",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/note/*",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/play/*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/aweme/detail/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/aweme/related/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/aweme/post/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/aweme/favorite/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/tab/feed/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v2/web/module/feed/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/mix/aweme/",
+      "readBody": true
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/jingxuan*",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/video/*",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/note/*",
+      "readBody": true,
+      "contentTypes": [
+        "text/html",
+        "text/html;*"
+      ]
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/play/*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "*.douyinvod.com",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "*.douyinpic.com",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "*.douyinstatic.com",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "www.douyin.com",
+      "path": "/aweme/v2/web/*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v1/web/*",
+      "readBody": false
+    },
+    {
+      "stage": "response",
+      "host": "www-hj.douyin.com",
+      "path": "/aweme/v2/web/*",
+      "readBody": false
     }
   ],
   "resourceKinds": [
@@ -55,8 +268,12 @@
       "icon": "albums",
       "color": "#8b5cf6",
       "locales": {
-        "zh": {"name": "合集"},
-        "en": {"name": "Collection"}
+        "zh": {
+          "name": "合集"
+        },
+        "en": {
+          "name": "Collection"
+        }
       }
     },
     {
@@ -64,8 +281,12 @@
       "icon": "video",
       "color": "#2080f0",
       "locales": {
-        "zh": {"name": "视频"},
-        "en": {"name": "Video"}
+        "zh": {
+          "name": "视频"
+        },
+        "en": {
+          "name": "Video"
+        }
       }
     },
     {
@@ -73,8 +294,12 @@
       "icon": "image",
       "color": "#18a058",
       "locales": {
-        "zh": {"name": "图片"},
-        "en": {"name": "Image"}
+        "zh": {
+          "name": "图片"
+        },
+        "en": {
+          "name": "Image"
+        }
       }
     },
     {
@@ -82,8 +307,12 @@
       "icon": "musical-notes",
       "color": "#f0a020",
       "locales": {
-        "zh": {"name": "音频"},
-        "en": {"name": "Audio"}
+        "zh": {
+          "name": "音频"
+        },
+        "en": {
+          "name": "Audio"
+        }
       }
     }
   ],
@@ -103,7 +332,78 @@
             "description": "Add an image post's soundtrack as a separate collection child."
           }
         }
+      },
+      "captureScope": {
+        "type": "string",
+        "enum": [
+          "viewed",
+          "all"
+        ],
+        "default": "viewed",
+        "x-locales": {
+          "zh": {
+            "name": "收录范围",
+            "description": "默认只收录当前浏览作品；全部接口作品会包含推荐和预加载内容。"
+          },
+          "en": {
+            "name": "Capture scope",
+            "description": "Capture viewed works by default; all API works includes recommendations and preloads."
+          }
+        },
+        "x-enumLabels": {
+          "zh": {
+            "viewed": "当前浏览作品",
+            "all": "全部接口作品"
+          },
+          "en": {
+            "viewed": "Viewed works",
+            "all": "All API works"
+          }
+        }
       }
     }
-  }
+  },
+  "pageScripts": [
+    {
+      "id": "current-work",
+      "entry": "page/current-work.js",
+      "match": [
+        {
+          "host": "www.douyin.com",
+          "path": "/"
+        },
+        {
+          "host": "www.douyin.com",
+          "path": "/jingxuan*"
+        },
+        {
+          "host": "www.douyin.com",
+          "path": "/video/*"
+        },
+        {
+          "host": "www.douyin.com",
+          "path": "/note/*"
+        },
+        {
+          "host": "www-hj.douyin.com",
+          "path": "/"
+        },
+        {
+          "host": "www-hj.douyin.com",
+          "path": "/jingxuan*"
+        },
+        {
+          "host": "www-hj.douyin.com",
+          "path": "/video/*"
+        },
+        {
+          "host": "www-hj.douyin.com",
+          "path": "/note/*"
+        }
+      ],
+      "runAt": "document-start",
+      "frames": "top",
+      "bridge": true
+    }
+  ]
 }

@@ -1,0 +1,69 @@
+{
+  "observations": [
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www.douyin.com/aweme/v1/web/aweme/detail/",
+        "host": "www.douyin.com",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "headers": {}
+      },
+      "response": {
+        "statusCode": 200,
+        "contentType": "application/json",
+        "headers": {},
+        "body": "{\"aweme_detail\": {\"aweme_id\": \"7390003\", \"desc\": \"示例分轨视频\", \"author\": {\"nickname\": \"示例作者\"}, \"video\": {\"width\": 1920, \"height\": 1080, \"format\": \"dash\", \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-dash-video.mp4\"]}, \"bit_rate\": [{\"format\": \"dash\", \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-dash-video.mp4\"], \"width\": 1920, \"height\": 1080, \"data_size\": 3000}}]}}}"
+      },
+      "settings": {
+        "captureScope": "all"
+      }
+    },
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www.douyin.com/aweme/v1/web/aweme/detail/",
+        "host": "www.douyin.com",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "headers": {}
+      },
+      "response": {
+        "statusCode": 200,
+        "contentType": "application/json",
+        "headers": {},
+        "body": "{\"aweme_detail\": {\"aweme_id\": \"7390003\", \"desc\": \"示例分轨视频\", \"author\": {\"nickname\": \"示例作者\"}, \"video\": {\"width\": 1920, \"height\": 1080, \"format\": \"dash\", \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-dash-video.mp4\"]}, \"bit_rate\": [{\"format\": \"dash\", \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-dash-video.mp4\"], \"width\": 1920, \"height\": 1080, \"data_size\": 3000}}], \"bit_rate_audio\": [{\"audio_meta\": {\"url_list\": [\"https://v26-web.douyinvod.com/example-dash-audio.m4a\"], \"media_type\": \"audio\", \"size\": 500, \"bitrate\": 128000}}]}}}"
+      },
+      "settings": {
+        "captureScope": "all"
+      }
+    },
+    {
+      "stage": "response",
+      "request": {
+        "method": "GET",
+        "url": "https://www.douyin.com/aweme/v1/web/aweme/detail/",
+        "host": "www.douyin.com",
+        "path": "/aweme/v1/web/aweme/detail/",
+        "headers": {}
+      },
+      "response": {
+        "statusCode": 200,
+        "contentType": "application/json",
+        "headers": {},
+        "body": "{\"aweme_detail\": {\"aweme_id\": \"7390003\", \"desc\": \"示例分轨视频\", \"author\": {\"nickname\": \"示例作者\"}, \"video\": {\"width\": 1920, \"height\": 1080, \"format\": \"dash\", \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-dash-video.mp4\"]}, \"bit_rate\": [{\"format\": \"dash\", \"play_addr\": {\"url_list\": [\"https://v11-weba.douyinvod.com/example-dash-video.mp4\"], \"width\": 1920, \"height\": 1080, \"data_size\": 3000}}], \"bit_rate_audio\": [{\"audio_meta\": {\"url_list\": [\"https://v26-web.douyinvod.com/example-dash-audio.m4a\"], \"media_type\": \"audio\", \"size\": 500, \"bitrate\": 128000}}]}}}"
+      },
+      "settings": {
+        "captureScope": "all"
+      }
+    }
+  ],
+  "expected": {
+    "resourceCount": 1,
+    "resourceUrls": [
+      "https://v11-weba.douyinvod.com/example-dash-video.mp4",
+      "https://v26-web.douyinvod.com/example-dash-audio.m4a"
+    ],
+    "decision": "continue"
+  }
+}

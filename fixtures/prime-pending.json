@@ -1,0 +1,24 @@
+{
+  "observation": {
+    "stage": "response",
+    "request": {
+      "method": "GET",
+      "url": "https://www.douyin.com/aweme/v1/web/aweme/detail/?aweme_id=7390062",
+      "host": "www.douyin.com",
+      "path": "/aweme/v1/web/aweme/detail/",
+      "headers": {}
+    },
+    "response": {
+      "statusCode": 200,
+      "contentType": "application/json",
+      "headers": {},
+      "body": "{\"aweme_detail\": {\"aweme_id\": \"7390062\", \"desc\": \"示例推荐作品\", \"video\": {\"width\": 1280, \"height\": 720, \"play_addr\": {\"url_list\": [\"https://v26-web-prime.douyinvod.com/video/fixture-track/?policy=4&signature=fixture-signature&tk=webid\"]}}}}"
+    },
+    "settings": {}
+  },
+  "expected": {
+    "resourceCount": 0,
+    "resourceUrls": [],
+    "decision": "continue"
+  }
+}

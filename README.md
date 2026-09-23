@@ -1,39 +1,47 @@
 # res-downloader-plugin-douyin
 
-`res-downloader` 的抖音资源识别插件，用于从抖音网页接口响应中识别视频和图文作品。
+[中文](README.md) | [English](README-EN.md)
+
+`res-downloader` 的抖音视频和图文资源插件。
 
 ## 功能
 
-- 识别抖音视频作品并保留标题、作者和封面信息。
-- 将图文作品整理为可展开的合集。
-- 可选将图文作品的背景音乐加入合集。
-- 支持预览、下载、打开和复制资源地址。
-
-## 要求
-
-- `res-downloader` 插件 API v1。
-- FFmpeg 6.0 或更高版本。
+- 支持精选、推荐、独立视频和图文作品。
+- 默认收录当前浏览的作品，下滑切换后继续收录，自动合并重复记录。
+- 优先采用网页已播放的画质，支持完整视频下载和音视频合并。
+- 图文作品按可展开合集保存，可选包含背景音乐。
 
 ## 安装
 
-发布后可在 `res-downloader` 的“插件管理”页面从插件商店安装。也可下载 GitHub Release 对应 Tag 的源码 ZIP，然后选择“从压缩包安装”。
+发布后可在 `res-downloader` 的“插件管理”页面安装。也可以下载对应版本的源码 ZIP，通过“从压缩包安装”导入。
 
-插件会申请读取 `*.douyin.com` 和 `*.iesdouyin.com` JSON 响应的权限，安装时请核对权限提示。
+## 设置
+
+- **收录范围**：默认“当前浏览作品”；选择“全部接口作品”会包含推荐和预加载作品。
+- **包含图文背景音乐**：默认开启，将背景音乐作为合集中的独立子资源，不影响视频音轨。
+
+## 注意事项
+
+- 音视频合并需要 FFmpeg 6.0 或更高版本；分轨资源需下载合并后播放，完整 MP4 可直接预览。
+- 不支持直播录制。网站要求登录或验证时，请先在浏览器中完成。
+- 资源不完整时请等待播放；地址过期或下载失败时，重新打开作品抓取，并检查浏览器与下载代理的网络出口是否一致。
+- 页面脚本未正常加载或网站改版时，连续收录可能失效；可刷新页面，必要时停用插件恢复通用抓取。
+- 偶尔可能收录预加载作品；升级前的重复记录需手动清理。
 
 ## 开发与校验
 
-在仓库根目录执行：
+在宿主仓库根目录执行：
 
 ```bash
 go run main.go plugin lint ./plugins/resd-plugin-douyin
-go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/image-post.json
-go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/video.json
-go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/suffixless-audio.json
-go run main.go plugin replay ./plugins/resd-plugin-douyin ./plugins/resd-plugin-douyin/fixtures/mp4-audio.json
+for fixture in ./plugins/resd-plugin-douyin/fixtures/*.json; do
+  go run main.go plugin replay ./plugins/resd-plugin-douyin "$fixture" || exit 1
+done
+node --test plugins/resd-plugin-douyin/tests/*.test.js
+go run main.go plugin pack ./plugins/resd-plugin-douyin
 ```
 
-Fixture 只包含脱敏后的虚构数据和示例地址。
-
+`fixtures/` 全部是可回放的脱敏虚构数据。`tests/` 补充离线页面消息、DOM 模拟、分轨下载计划及 `handled` 契约检查；单插件回放无法断言完整插件链行为。这些检查不代表应用安装、线上抓取、预览或实际下载已经验收。
 
 ## License
 
