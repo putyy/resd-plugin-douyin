@@ -2,7 +2,7 @@
 
 [中文](README.md) | [English](README-EN.md)
 
-`res-downloader` 的抖音视频和图文资源插件。
+[res-downloader](https://github.com/putyy/res-downloader) 的抖音视频和图文资源插件。
 
 ## 功能
 

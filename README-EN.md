@@ -2,7 +2,7 @@
 
 [中文](README.md) | [English](README-EN.md)
 
-A Douyin video and image-post plugin for `res-downloader`.
+A Douyin video and image-post plugin for [res-downloader](https://github.com/putyy/res-downloader).
 
 ## Features
 
